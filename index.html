@@ -106,13 +106,23 @@
         display: flex; 
         align-items: center; 
         justify-content: center; 
-        background: linear-gradient(135deg, rgba(13, 161, 236, 0.85), rgba(30, 30, 30, 0.9)), url('assets/images/slide-01.jpg');
+        background: #1e1e1e;
         background-size: cover; 
-        background-position: center; 
+        background-position: center top; 
         background-attachment: fixed;
         position: relative;
         margin-top: 0;
         overflow: hidden;
+      }
+      .main-banner::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;
       }
       .main-banner .header-text {
         width: 100%;
@@ -152,9 +162,10 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        opacity: 0;
+        opacity: 1;
       }
-      .main-banner .text-content { 
+      .main-banner .text-content,
+      .main-banner .item .text-content { 
         text-align: center; 
         color: var(--white); 
         max-width: 900px;
@@ -168,7 +179,8 @@
         transform: none !important;
       }
       .main-banner .text-content h3,
-      .main-banner .item h3 { 
+      .main-banner .item h3,
+      .main-banner .item .text-content h3 { 
         font-size: 56px !important; 
         font-weight: 800 !important; 
         color: var(--white) !important; 
@@ -179,7 +191,8 @@
         animation: none !important;
       }
       .main-banner .text-content p,
-      .main-banner .item h5 { 
+      .main-banner .item h5,
+      .main-banner .item .text-content p { 
         font-size: 22px !important; 
         color: var(--white) !important; 
         margin-bottom: 35px !important; 
@@ -465,7 +478,6 @@
       <div class="Modern-Slider">
         <div class="item">
           <div class="img-fill">
-            <img src="assets/images/slide-01.jpg" alt="">
             <div class="text-content">
               <h3>Sait Güzel</h3>
               <p>Yazılım Uzmanı | .NET Core | Python | Full Stack Developer</p>
