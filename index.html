@@ -92,11 +92,60 @@
       
       /* Mobile Navigation */
       @media (max-width: 991px) {
-        .header-area .navbar { flex-direction: column; height: auto; padding: 15px 0; }
-        .header-area .nav { flex-wrap: wrap; justify-content: center; margin-top: 15px; gap: 10px; }
-        .header-area .nav li a { padding: 10px 15px; font-size: 14px; }
+        .header-area .navbar { 
+          flex-direction: row; 
+          height: auto; 
+          padding: 15px 0; 
+          position: relative;
+        }
+        .navbar-toggler {
+          display: block !important;
+          background: transparent !important;
+          border: 2px solid var(--white) !important;
+          padding: 8px 12px !important;
+          border-radius: 6px !important;
+          cursor: pointer;
+          margin-left: auto;
+        }
+        .navbar-toggler-icon {
+          background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+          width: 22px !important;
+          height: 18px !important;
+        }
+        .header-area .nav { 
+          display: none;
+          flex-wrap: wrap; 
+          justify-content: center; 
+          margin-top: 15px; 
+          gap: 10px;
+          width: 100%;
+          flex-direction: column;
+          align-items: center;
+          background: rgba(30, 30, 30, 0.95);
+          padding: 20px 0;
+          border-radius: 8px;
+          margin-top: 20px;
+        }
+        .header-area .nav.show {
+          display: flex;
+        }
+        .header-area .nav li { 
+          width: 100%;
+          text-align: center;
+          padding: 5px 0 !important;
+        }
+        .header-area .nav li a { 
+          padding: 12px 20px; 
+          font-size: 15px; 
+        }
         .main-banner .text-content h3 { font-size: 36px !important; }
         .main-banner .text-content p { font-size: 16px !important; }
+      }
+      
+      @media (min-width: 992px) {
+        .navbar-toggler {
+          display: none !important;
+        }
       }
       
       /* Main Banner - Enhanced */
@@ -474,10 +523,30 @@
         .main-banner .text-content { padding: 30px 20px; }
       }
     </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        const nav = document.querySelector('.header-area .nav');
+        
+        if (navbarToggler && nav) {
+          navbarToggler.addEventListener('click', function() {
+            nav.classList.toggle('show');
+          });
+          
+          // Close menu when clicking on a link
+          const navLinks = nav.querySelectorAll('a');
+          navLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+              nav.classList.remove('show');
+            });
+          });
+        }
+      });
+    </script>
 </head>
 <body>
     <div id="preloader"><div class="jumper"><div></div><div></div><div></div></div></div>
-    <header class="header-area header-sticky navbar-light"><div class="container"><nav class="navbar"><a class="navbar-brand" href="#top"><h2>Sait Güzel</h2></a><ul class="nav"><li><a href="#about">Hakkımda</a></li><li><a href="#experience">Deneyim</a></li><li><a href="#skills">Yetenekler</a></li><li><a href="#projects">Projeler</a></li><li><a href="#education">Eğitim</a></li><li><a href="#contact">İletişim</a></li></ul></nav></div></header>
+    <header class="header-area header-sticky navbar-light"><div class="container"><nav class="navbar"><a class="navbar-brand" href="#top"><h2>Sait Güzel</h2></a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><ul class="nav" id="navbarNav"><li><a href="#about">Hakkımda</a></li><li><a href="#experience">Deneyim</a></li><li><a href="#skills">Yetenekler</a></li><li><a href="#projects">Projeler</a></li><li><a href="#education">Eğitim</a></li><li><a href="#contact">İletişim</a></li></ul></nav></div></header>
     <div class="main-banner header-text" id="top">
       <div class="Modern-Slider">
         <div class="item">
