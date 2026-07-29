@@ -94,7 +94,7 @@
       @media (max-width: 991px) {
         .header-area .navbar { 
           flex-direction: row; 
-          height: auto; 
+          min-height: 80px;
           padding: 15px 0; 
           position: relative;
         }
@@ -106,11 +106,16 @@
           border-radius: 6px !important;
           cursor: pointer;
           margin-left: auto;
+          transition: all 0.3s ease;
+        }
+        .navbar-toggler:hover {
+          background: rgba(255,255,255,0.1) !important;
         }
         .navbar-toggler-icon {
           background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
           width: 22px !important;
           height: 18px !important;
+          display: block;
         }
         .header-area .nav { 
           display: none;
@@ -121,13 +126,18 @@
           width: 100%;
           flex-direction: column;
           align-items: center;
-          background: rgba(30, 30, 30, 0.95);
+          background: rgba(30, 30, 30, 0.98);
           padding: 20px 0;
           border-radius: 8px;
-          margin-top: 20px;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          z-index: 999;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
         .header-area .nav.show {
-          display: flex;
+          display: flex !important;
+          animation: slideDown 0.3s ease;
         }
         .header-area .nav li { 
           width: 100%;
@@ -135,11 +145,17 @@
           padding: 5px 0 !important;
         }
         .header-area .nav li a { 
-          padding: 12px 20px; 
-          font-size: 15px; 
+          padding: 15px 20px; 
+          font-size: 16px; 
+          width: 100%;
         }
         .main-banner .text-content h3 { font-size: 36px !important; }
         .main-banner .text-content p { font-size: 16px !important; }
+      }
+      
+      @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
       }
       
       @media (min-width: 992px) {
