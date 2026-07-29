@@ -106,7 +106,7 @@
         display: flex; 
         align-items: center; 
         justify-content: center; 
-        background: #1e1e1e;
+        background: linear-gradient(135deg, rgba(30, 30, 30, 0.85), rgba(13, 161, 236, 0.7)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80');
         background-size: cover; 
         background-position: center top; 
         background-attachment: fixed;
@@ -121,7 +121,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.5);
+        background: transparent;
         z-index: 1;
       }
       .main-banner .header-text {
@@ -130,6 +130,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        position: relative;
+        z-index: 10;
       }
       .main-banner .Modern-Slider {
         width: 100%;
@@ -155,15 +157,6 @@
         position: relative;
         background: transparent !important;
       }
-      .main-banner .img-fill img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 1;
-      }
       .main-banner .text-content,
       .main-banner .item .text-content { 
         text-align: center; 
@@ -185,7 +178,7 @@
         font-weight: 800 !important; 
         color: var(--white) !important; 
         margin-bottom: 20px !important; 
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         letter-spacing: 2px;
         text-transform: none !important;
         animation: none !important;
@@ -201,6 +194,7 @@
         letter-spacing: 1px;
         animation: none !important;
         overflow: visible !important;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
       }
       .main-stroked-button, .main-filled-button { 
         display: inline-block; 
@@ -213,6 +207,7 @@
         transition: all 0.3s ease;
         text-transform: uppercase;
         letter-spacing: 1px;
+        cursor: pointer;
       }
       .main-stroked-button { 
         border: 3px solid var(--white); 
@@ -461,6 +456,7 @@
         .section-heading h2 { font-size: 28px; }
         .skill-item, .project-card, .timeline-item { padding: 20px; }
         .about-text { padding: 20px; }
+        .main-banner { background-attachment: scroll; }
       }
       
       @media (max-width: 576px) {
@@ -468,6 +464,7 @@
         .main-banner .text-content p { font-size: 14px; }
         .header-area .navbar-brand h2 { font-size: 22px; }
         .skill-tags span { font-size: 12px; padding: 6px 12px; }
+        .main-banner .text-content { padding: 30px 20px; }
       }
     </style>
 </head>

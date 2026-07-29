@@ -817,7 +817,7 @@ banner
 /* ==== Slider Style === */
 .Modern-Slider .item .img-fill{
   /* height:95vh; */
-  background:#000;
+  background: transparent !important;
 }
 
 .Modern-Slider .item .info > div{
@@ -887,10 +887,10 @@ ul.slick-dots {
 
 .Modern-Slider .text-content {
   width: 80%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
 }
 
 .Modern-Slider .item h3 {
@@ -899,8 +899,8 @@ ul.slick-dots {
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1px;
-  color:#FFF;
-  animation:fadeOutRight 1s both;
+  color: #FFF;
+  animation: fadeOutRight 1s both;
 }
 
 .Modern-Slider .item h5 {
@@ -908,9 +908,9 @@ ul.slick-dots {
   font-size: 36px;
   font-weight: 200;
   letter-spacing: 2.5px;
-  color:#FFF;
-  overflow:hidden;
-  animation:fadeOutLeft 1s both;
+  color: #FFF;
+  overflow: visible !important;
+  animation: none !important;
 }
 
 .Modern-Slider .item a {
@@ -918,22 +918,22 @@ ul.slick-dots {
 }
 
 .Modern-Slider .item.slick-active h3{
-  animation:fadeInDown 1s both 1s;
+  animation: none !important;
 }
 
 .Modern-Slider .item.slick-active h5{
-  animation:fadeInLeft 1s both 1.5s;
+  animation: none !important;
 }
 
 .Modern-Slider .item.slick-active{
-  animation:Slick-FastSwipeIn 1s both;
+  animation: none !important;
 }
 
 .Modern-Slider .buttons {
   position: relative;
 }
 
-.Modern-Slider {background:#000;}
+.Modern-Slider {background: transparent !important;}
 
 
 /* ==== Slick Slider Css Ruls === */
