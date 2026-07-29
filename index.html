@@ -140,6 +140,7 @@
         align-items: center;
         justify-content: center;
         background: transparent !important;
+        pointer-events: none !important;
       }
       .main-banner .item {
         width: 100%;
@@ -147,6 +148,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        pointer-events: none !important;
       }
       .main-banner .img-fill {
         width: 100%;
@@ -156,6 +158,7 @@
         justify-content: center;
         position: relative;
         background: transparent !important;
+        pointer-events: none !important;
       }
       .main-banner .text-content,
       .main-banner .item .text-content { 
@@ -170,6 +173,7 @@
         top: auto !important;
         left: auto !important;
         transform: none !important;
+        pointer-events: auto !important;
       }
       .main-banner .text-content h3,
       .main-banner .item h3,
@@ -208,6 +212,9 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         cursor: pointer;
+        pointer-events: auto !important;
+        z-index: 100 !important;
+        position: relative;
       }
       .main-stroked-button { 
         border: 3px solid var(--white); 
