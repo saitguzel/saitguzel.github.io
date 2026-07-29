@@ -1,1 +1,5 @@
-(index.html is a source file, so no need to add anything to .gitignore)
+# Image files are not ignored per the rules
+# No build artifacts, dependencies, or temp files detected in changes
+# Source/config files only (.html, .jpg) - no ignores needed
+
+(No output - empty .gitignore)
