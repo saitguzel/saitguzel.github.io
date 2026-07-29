@@ -778,13 +778,11 @@ banner
   overflow: hidden;
   position: relative;
   text-align: center;
-  pointer-events: none !important;
 }
 
 .img-fill img {
   min-height: 100%;
   min-width: 100%;
-  pointer-events: none !important;
   position: relative;
   display: inline-block;
   max-width: none;
@@ -814,14 +812,12 @@ banner
 .slick-slide {
   float: left /* If RTL Make This Right */ ;
   padding: 0;
-  pointer-events: none !important;
 }
 
 /* ==== Slider Style === */
 .Modern-Slider .item .img-fill{
   /* height:95vh; */
   background: transparent !important;
-  pointer-events: none !important;
 }
 
 .Modern-Slider .item .info > div{
@@ -954,7 +950,7 @@ ul.slick-dots {
 .slick-track{position:relative;top:0;left:0;display:block}
 .slick-track:before,.slick-track:after{display:table;content:''}.slick-track:after{clear:both}
 .slick-loading .slick-track{visibility:hidden}
-.slick-slide{display:none;float:left /* If RTL Make This Right */ ;height:100%;min-height:1px; pointer-events: none !important}
+.slick-slide{display:none;float:left /* If RTL Make This Right */ ;height:100%;min-height:1px}
 .slick-slide.dragging img{pointer-events:none}
 .slick-initialized .slick-slide{display:block}
 .slick-loading .slick-slide{visibility:hidden}
