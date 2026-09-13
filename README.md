@@ -1,85 +1,45 @@
-# Sait Güzel - Yazılım Uzmanı Portfolio
+# saitguzel.github.io
 
-Sait Güzel'in kişisel portfolio web sitesi. Bu proje, yazılım uzmanlığının deneyimlerini, yeteneklerini ve projelerini sergileyen modern bir web sitesidir.
+Sait Güzel'in kişisel portfolyo sitesi: **https://saitguzel.github.io**
 
-## 📋 İçerik
+Derleme adımı olmayan, statik ve hızlı bir tek sayfa uygulama: HTML + CSS + az miktarda JavaScript.
 
-- **Hakkımda**: Kişisel bilgiler ve profil özeti
-- **Deneyim**: İş geçmişi ve profesyonel deneyimler
-- **Yetenekler**: Programlama dilleri, framework'ler ve teknolojiler
-- **Projeler**: Öne çıkan geliştirilen projeler
-- **Eğitim**: Akademik geçmiş ve sertifikalar
-- **İletişim**: İletişim bilgileri
+## Özellikler
 
-## 🛠️ Teknolojiler
+- Türkçe (`/`) ve İngilizce (`/en/`) sürümler, `hreflang` bağlantıları ve dil düğmesi
+- Açık / koyu tema (sistem tercihini izler, seçim tarayıcıda hatırlanır)
+- Mobil uyumlu düzen, mobil menü, aktif bölüm vurgusu
+- Deneyim zaman çizelgesi, kişisel projeler, yetenekler, eğitim ve sertifikalar
+- İndirilebilir CV: Türkçe (`cv/sait-guzel-cv-2026-tr.pdf`) ve İngilizce (`cv/sait-guzel-cv-2026-en.pdf`)
+- [Buy Me a Coffee](https://buymeacoffee.com/saitguzel) destek bağlantısı
+- SEO: meta açıklamaları, Open Graph, `schema.org/Person` JSON-LD, `sitemap.xml`, `robots.txt`
+- Erişilebilirlik: anlamsal başlıklar, klavye odağı, "içeriğe geç" bağlantısı, `prefers-reduced-motion` desteği
 
-### Frontend
-- HTML5, CSS3, JavaScript
-- Bootstrap
-- jQuery
-- Font Awesome
-- Owl Carousel
-- Lightbox
-
-### Backend (Projelerde)
-- .NET 9 / .NET Core
-- ASP.NET Core MVC
-- Python FastAPI
-- PHP
-- Node.js
-
-### Veritabanı
-- MSSQL
-- PostgreSQL
-- SQLite
-- MongoDB
-- Neo4j
-
-### Bulut & DevOps
-- Microsoft Azure
-- Google Cloud
-- Docker
-- Kubernetes
-
-## 📁 Proje Yapısı
+## Yapı
 
 ```
-/workspace
-├── index.html          # Ana portfolio sayfası
-├── assets/
-│   ├── css/           # Stil dosyaları
-│   ├── js/            # JavaScript dosyaları
-│   ├── fonts/         # Font dosyaları
-│   └── images/        # Görsel dosyalar
-├── README.md          # Bu dosya
-└── sait_güzel_cv_2026_tr.pdf  # CV belgesi
+index.html            # Türkçe sayfa (CV verisinden üretilir)
+en/index.html         # İngilizce sayfa
+assets/css/style.css  # Tasarım sistemi ve bileşenler
+assets/js/main.js     # Tema, menü, kaydırma etkileşimleri
+assets/img/           # Profil fotoğrafı
+cv/                   # PDF CV
+favicon.svg, robots.txt, sitemap.xml
 ```
 
-## 🚀 Kullanım
+## İçeriği güncellemek
 
-1. `index.html` dosyasını herhangi bir modern web tarayıcısında açın
-2. Tüm kaynaklar yerel olarak `assets/` klasöründe bulunmaktadır
-3. Site tamamen responsive (mobil uyumlu) tasarlanmıştır
+`index.html` elle düzenlenmez; CV ile aynı veri kaynaklarından (`cv_data.py`, `cv_data_en.py`) `build_site.py` betiğiyle üretilir.
+Böylece CV (PDF/DOCX) ve site her zaman aynı bilgiyi gösterir.
 
-## 📄 Lisans
+```bash
+python3 build_site.py      # index.html, fotoğraf, CV PDF ve sitemap.xml yenilenir
+```
 
-Tüm hakları Sait Güzel'e aittir.
+Yerelde önizleme:
 
-## 📞 İletişim
+```bash
+python3 -m http.server 8000   # http://localhost:8000
+```
 
-- **E-posta**: saitguzel90@hotmail.com
-- **Telefon**: 0535 863 5517
-- **LinkedIn**: https://www.linkedin.com/in/saitguzel/
-- **GitHub**: https://github.com/saitguzel
-- **Adres**: Çayağzı Mah. No:92, Kiraz/İZMİR
-
-## 💼 İş Deneyimi
-
-- **Mergenova Yazılım Ltd. Şti.** - Yazılım Uzmanı (Eylül 2025 - Haziran 2026)
-- **Monovi Bilgi Teknolojileri** - Yazılım Uzmanı (Mart 2021 - Temmuz 2025)
-- **Bilsa Yazılım A.Ş.** - Yazılım Uzmanı (2016-2021)
-
-## 🎓 Eğitim
-
-- **Pamukkale Üniversitesi** - Bilgisayar Mühendisliği (GPA: 3.04/4.0)
-- **Kiraz Çok Programlı Lisesi** - Yabancı Dil Ağırlıklı
+GitHub Pages `main` dalının kökünden yayın yapar; push sonrası birkaç dakika içinde canlıya çıkar.
